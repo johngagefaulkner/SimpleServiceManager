@@ -11,8 +11,12 @@ If you're only here to download the .exe and be on your way, you can grab it **h
 ## Usage
 If you're interesed in the source code, installing and uninstalling are handled by Windows' built-in "sc.exe" commands.
 Here's an example with variables:
+
 ```csharp
- sc.exe create SERVICE NAME binpath= "SERVICE FULL PATH"
+//Call sc.exe (ServiceConnector built into Windows)
+//Take note of the extra space between "binpath= " and "SERVICE_FULL_PATH"
+ sc.exe create "SERVICE_NAME" binpath= "SERVICE_FULL_PATH"
+ 
  Process p = new Process();
  p.StartInfo.UseShellExecute = false;
  p.StartInfo.RedirectStandardOutput = true;
